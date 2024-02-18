@@ -1,0 +1,27 @@
+1、编译工具链
+export PATH=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin:$PATH
+
+2、执行编译脚本
+cd  sdk/osdrv
+./MY3_all_build.sh
+
+3、拷贝镜像文件
+cp ./rootfs_scripts/y2fs/data/dv300-MY3.xml ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_dev
+cp ./rootfs_scripts/y2fs/data/MY3_logo.jpg  ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_dev/logo.jpg
+cp ./rootfs_scripts/y2fs/data/dv300-MY3.xml ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_test
+cp ./rootfs_scripts/y2fs/data/MY3_logo.jpg  ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_test/logo.jpg
+cp ./rootfs_scripts/y2fs/data/dv300-MY3.xml ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_release
+cp ./rootfs_scripts/y2fs/data/MY3_logo.jpg  ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_release/logo.jpg
+
+cp ./rootfs_scripts/y2fs/data/config_ext4_ext4_emmc ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_dev
+cp ./rootfs_scripts/y2fs/data/config_ext4_ext4_emmc ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_test
+cp ./rootfs_scripts/y2fs/data/config_ext4_ext4_emmc ./pub/hi3516dv300_emmc_smp_image_glibc_all/hi3516dv300_emmc_smp_image_glibc_release
+
+
+
+
+
+
+
+
+MTK 服务器 E-SERVICE huang_gh@mikimobile.com  26442400  https://eservicesso.mediatek.com

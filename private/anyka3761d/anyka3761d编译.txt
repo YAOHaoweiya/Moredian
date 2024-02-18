@@ -1,0 +1,2 @@
+anyka3761d环境配置：
+export PATH=/opt/arm-anykav500-linux-uclibcgnueabi/bin/:$PATH
