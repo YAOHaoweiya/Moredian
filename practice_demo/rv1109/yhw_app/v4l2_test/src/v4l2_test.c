@@ -10,6 +10,8 @@
 #include <sys/mman.h>
 #include <linux/videodev2.h>
 
+//#include "../include/isp_common.h"
+
 #define CLEAR(x) memset(&(x), 0, sizeof(x))
 #define FMT_NUM_PLANES 1
 //定义一个结构体来映射缓冲帧
@@ -33,6 +35,58 @@ struct v4l2_buffer buf;
 struct v4l2_plane planes[FMT_NUM_PLANES];
 
 struct buffer *tmp_buffers = NULL;//初始化映射缓冲帧的结构体
+
+
+// /*******************************************************************************************************************/
+// /***************关于isp的定义****************/
+// bool m_isp0_enable;
+// bool m_isp1_enable;
+// int m_isp0_init_success;
+// int m_isp1_init_success;
+// rk_aiq_working_mode_t isp0_working_mode;
+// rk_aiq_working_mode_t isp1_working_mode;
+// int m_isp0_framerate;
+// int m_isp1_framerate;
+// char* m_iq_file = NULL;
+// /************************end***************/
+// void IspSet(void)
+// {
+// 	char *iqfile="/app/iqfiles/";
+// 	m_iq_file=iqfile;
+// 	m_isp0_enable=true;
+// 	m_isp1_enable=true;
+// 	isp0_working_mode=RK_AIQ_WORKING_MODE_ISP_HDR2;
+// 	isp0_working_mode=RK_AIQ_WORKING_MODE_ISP_HDR2;
+// 	m_isp0_framerate=25;
+// 	m_isp1_framerate=25;
+// }
+
+// int IspStart(void)
+// {
+// 	bool multi_cam = false;
+//     if(m_isp0_enable && m_isp1_enable)
+//         multi_cam = true;
+// 	if(m_isp0_enable){
+//        m_isp0_init_success =  Ispinit(0,m_isp0_mode,multi_cam ,m_iq_file.c_str(),m_isp0_framerate );
+//     }
+
+//     if(m_isp1_enable){
+//         m_isp1_init_success = Ispinit(1,m_isp1_mode,multi_cam ,m_iq_file.c_str(),m_isp1_framerate );
+//     }
+// }
+// int IspinitIspinit(int index,rk_aiq_working_mode_t isp_working_mode,bool multi_cam ,char* m_iq_file ,int framerate)
+// {
+
+// 	int ret = SAMPLE_COMM_ISP_Init(index, isp_working_mode, static_cast<RK_BOOL>(multi_cam), iq_file_dir.c_str());
+//     if(ret < 0){
+//         __MODULE_ERR<<"isp "<<index<<" init error";
+//         return -1;
+//     }
+//     SAMPLE_COMM_ISP_Run(index);
+//     SAMPLE_COMM_ISP_SetFrameRate(index, framerate);
+//     return 0;
+// }
+// /*************************************************************************************************************************************/
 
 int OpenDevice(void)
 {
@@ -264,6 +318,11 @@ void WriteFrame(void)
 
 int main()
 {
+	/*
+	IspSet();
+	IspStart();
+	*/
+	
 	//1.打开video设备节点
 	OpenDevice();
 	//2.查询设备能力，设置视频捕获格式

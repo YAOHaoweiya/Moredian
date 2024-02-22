@@ -25,11 +25,11 @@ CFLAGS := -Wall
 TARGET = v4l2_test
 
 #指定除了编译器默认的头文件和库文件的路径之外需要额外引用的头文件路径以及库的路径
-INCLUDES = -I./include
+INCLUDES = -I./include/
 LIBS = -L/${PWD}/libs/
 
 # 源文件
-SRCS := ./src/v4l2_test_one.c
+SRCS := ./src/v4l2_test.c
 #SRCS := ./src/v4l2_test.c
 #SRCS = $(wildcard ./src/*.c)
 
